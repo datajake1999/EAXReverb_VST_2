@@ -70,7 +70,7 @@ void EAXReverb::setParameter (VstInt32 index, float value)
 	case kRoomRolloffFactor :    SetRoomRolloffFactor (value*EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR);					break;
 	case kDecayHFLimit :    SetDecayHFLimit (value);					break;
 	}
-	if (index > kDensity && index < kNumParams)
+	if (index >= kDensity && index < kNumParams)
 	{
 		UpdateEffect();
 	}
