@@ -106,14 +106,14 @@ void EAXReverb::processReplacing (float** inputs, float** outputs, VstInt32 samp
 		//apply gain to dry samples
 		for (i=0; i<workSamples; i++)
 		{
-			in1[i] = in1[i] * DryGain;
-			in2[i] = in2[i] * DryGain;
+			in1[i+offset] = in1[i+offset] * DryGain;
+			in2[i+offset] = in2[i+offset] * DryGain;
 		}
 		//write to the audio buffer
 		for (i=0; i<workSamples; i++)
 		{
-			out1[i] = in1[i] + floatSamplesOut[i*2 + 0];
-			out2[i] = in2[i] + floatSamplesOut[i*2 + 1];
+			out1[i+offset] = in1[i+offset] + floatSamplesOut[i*2 + 0];
+			out2[i+offset] = in2[i+offset] + floatSamplesOut[i*2 + 1];
 		}
 		//update the sample counters
 		sampleFrames -= workSamples;
