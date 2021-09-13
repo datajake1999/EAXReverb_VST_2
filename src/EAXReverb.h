@@ -17,13 +17,12 @@ enum
 	kNumParams
 };
 
-class EAXReverbProgram
+typedef struct
 {
-public:	
 	ReverbSettings settings;
 	float DecayHFLimit;
 	char name[32];
-};
+}EAXReverbProgram;
 
 class EAXReverb : public AudioEffectX
 {
