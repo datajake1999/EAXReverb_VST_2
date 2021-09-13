@@ -30,7 +30,7 @@ EAXReverb::~EAXReverb ()
 {
 	if (floatSamplesIn)
 	{
-		delete floatSamplesIn;
+		delete[] floatSamplesIn;
 		floatSamplesIn = NULL;
 	}
 	effect.Destroy();

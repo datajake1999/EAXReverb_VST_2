@@ -47,7 +47,7 @@ void EAXReverb::setBlockSize (VstInt32 blockSize)
 {
 	if (floatSamplesIn)
 	{
-		delete floatSamplesIn;
+		delete[] floatSamplesIn;
 		floatSamplesIn = NULL;
 	}
 	floatSamplesIn = new float[blockSize];
