@@ -82,9 +82,9 @@ private:
 	ReverbEffect effect;
 	float *floatSamplesIn;
 	float floatSamplesOut[REVERB_BUFFERSIZE * OUTPUT_CHANNELS];
-	EAXReverbProgram programs[kNumPrograms];
 	float DisableEffect;
 	float DryGain;
+	EAXReverbProgram programs[kNumPrograms];
 };
 
 #endif
