@@ -46,6 +46,7 @@ public:
 	virtual VstPlugCategory getPlugCategory ();
 	virtual void setSampleRate (float sampleRate);
 	virtual void setBlockSize (VstInt32 blockSize);
+	virtual void resume ();
 	virtual void processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames);
 private:
 	void SetDensity(float val);

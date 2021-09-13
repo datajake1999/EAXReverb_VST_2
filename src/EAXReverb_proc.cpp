@@ -40,7 +40,6 @@ void EAXReverb::setSampleRate (float sampleRate)
 	AudioEffectX::setSampleRate (sampleRate);
 	effect.Destroy();
 	effect.Create((int)sampleRate);
-	UpdateEffect();
 }
 
 void EAXReverb::setBlockSize (VstInt32 blockSize)
@@ -55,6 +54,12 @@ void EAXReverb::setBlockSize (VstInt32 blockSize)
 	{
 		memset(floatSamplesIn, 0, 4*blockSize);
 	}
+}
+
+void EAXReverb::resume ()
+{
+	AudioEffectX::resume ();
+	UpdateEffect();
 }
 
 void EAXReverb::processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames)
