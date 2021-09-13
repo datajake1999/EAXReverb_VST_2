@@ -44,6 +44,7 @@ void EAXReverb::setSampleRate (float sampleRate)
 
 void EAXReverb::setBlockSize (VstInt32 blockSize)
 {
+	AudioEffectX::setBlockSize (blockSize);
 	if (floatSamplesIn)
 	{
 		delete[] floatSamplesIn;
