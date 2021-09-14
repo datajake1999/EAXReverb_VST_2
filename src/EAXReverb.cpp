@@ -13,11 +13,11 @@ EAXReverb::EAXReverb (audioMasterCallback audioMaster)
 	}
 	for (int i = 0; i < numPrograms; i++)
 	{
-		setProgram (i);
+		curProgram = i;
 		SetReverbPreset (i);
 		setProgramName (GetPresetName(i));
 	}
-	setProgram (0);
+	curProgram = 0;
 	setNumInputs (2);	// stereo input
 	setNumOutputs (2);	// stereo output
 	setUniqueID ('EAX');
