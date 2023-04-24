@@ -517,7 +517,7 @@ void ReverbEffect::Process(uint32_t SamplesToDo, const float *SamplesIn, float *
         if(fabsf(lateGain) > GAIN_SILENCE_THRESHOLD)
         {
             for(index = 0;index < SamplesToDo;index++)
-                SamplesOut[index * 2 + c] = lateGain*late[index][c&3];
+                SamplesOut[index * 2 + c] += lateGain*late[index][c&3];
         }
     }
 }
